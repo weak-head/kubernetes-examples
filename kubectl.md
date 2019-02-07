@@ -33,5 +33,14 @@ kubectl scale --replicas=4 <deployment>
 # expose load balancer for nodes
 kubectl expose deployment <deployment_name> --type=LoadBalancer --port=<port> --target-port=<port> --name <load_balancer_name>
 
+# view status of deployment
+kubectl rollout status deployment <deployment_name>
+
+# set the image of a deployment
+kubectl set image <deployment_name> container=new_image
+
+# view the history of a rollout
+kubectl rollout history
+
 
 ```
