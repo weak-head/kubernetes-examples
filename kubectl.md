@@ -4,6 +4,7 @@
 # list all pods / deployments in all namespaces
 kubectl get pods
 kubectl get deployments
+kubectl get nodes
 
 # describes detailed info
 kubectl describe pods [pod_name]
@@ -23,6 +24,7 @@ kubectl exec [-it] <pod-name> [-c container] command [args]
 
 # update the labels on a resource
 kubectl label [--overwrite] <type> key1=val1 ..
+kubectl label node <node_name> key1=val1 ..
 
 # run an image on the cluster
 kubectl run <name> --image=image
@@ -42,5 +44,6 @@ kubectl set image <deployment_name> container=new_image
 # view the history of a rollout
 kubectl rollout history
 
-
+# apply updated config
+kubectl apply -f ./deployment.yaml
 ```
